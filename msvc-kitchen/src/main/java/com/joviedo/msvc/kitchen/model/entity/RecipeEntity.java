@@ -1,5 +1,6 @@
 package com.joviedo.msvc.kitchen.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.joviedo.msvc.kitchen.model.Ingredient;
 import jakarta.persistence.*;
 
@@ -17,25 +18,28 @@ public class RecipeEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRecipe;
 
-    @Column(name="NAME")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name="TIME_TO_COOK")
+    @Column(name = "TIME_TO_COOK")
     private int timeToCook;
 
-
+    @JsonIgnore
     @Column(name = "INGREDIENTS")
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "RECIPE_ID")
     private List<RecipeIngredient> recipeIngredients;
 
+    @JsonIgnore
     @Transient
     private List<Ingredient> ingredients;
 
-    public RecipeEntity(){
+    public RecipeEntity() {
         recipeIngredients = new ArrayList<>();
         ingredients = new ArrayList<>();
     }
+
+    //Getters and Setters
 
 
     public Long getIdRecipe() {
@@ -63,12 +67,12 @@ public class RecipeEntity implements Serializable {
         this.timeToCook = timeToCook;
     }
 
-    public void addIngredient(RecipeIngredient ingredient){
+    public void addIngredient(RecipeIngredient ingredient) {
 
         recipeIngredients.add(ingredient);
     }
 
-    public void removeIngredient(RecipeIngredient ingredient){
+    public void removeIngredient(RecipeIngredient ingredient) {
 
         recipeIngredients.remove(ingredient);
     }

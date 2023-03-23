@@ -16,6 +16,7 @@
     <packaging>pom</packaging>
 <modules>
     <module>msvc-kitchen</module>
+    <module>msvc-warehouse</module>
 </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

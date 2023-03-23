@@ -18,6 +18,8 @@ public class RecipeIngredient implements Serializable {
     @Column(name = "QUANTITY")
     private int quantity;
 
+    //Getters and Setters
+
     public Long getId() {
         return id;
     }
