@@ -1,9 +1,17 @@
 package com.joviedo.msvc.warehouse.controller;
 
+import com.joviedo.msvc.warehouse.model.RecipeIngredient;
 import com.joviedo.msvc.warehouse.model.entity.IngredientEntity;
 import com.joviedo.msvc.warehouse.service.StockService;
+import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/warehouse")
@@ -14,9 +22,26 @@ public class WarehouseController {
 
 
     @GetMapping("/buyStock")
-    public int buyStock(@RequestParam String ingredient){
+    public ResponseEntity<?> buyStock(@RequestParam Long ingredient) {
 
-        return stockService.buyStock(ingredient);
+        try {
+            stockService.buyStock(ingredient);
+        } catch (FeignException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Collections.singletonMap("Message", "Theres an error with client communication or " +
+                            "cant found ingredient with id: " + ingredient + e.getMessage()));
+        }
+
+        return ResponseEntity.ok().build();
+
+    }
+
+    @PostMapping("/check")
+    public ResponseEntity<?> checkRecipe(@RequestBody List<RecipeIngredient> ingredients) {
+
+        stockService.checkRecipe(ingredients);
+        return ResponseEntity.noContent().build();
+
 
     }
 }

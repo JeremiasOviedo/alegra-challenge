@@ -26,7 +26,7 @@ public class RecipeEntity implements Serializable {
 
     @JsonIgnore
     @Column(name = "INGREDIENTS")
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "RECIPE_ID")
     private List<RecipeIngredient> recipeIngredients;
 

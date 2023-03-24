@@ -9,8 +9,9 @@ import com.joviedo.msvc.warehouse.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class StockServiceImpl implements StockService {
@@ -22,35 +23,34 @@ public class StockServiceImpl implements StockService {
     MarketClient market;
 
     @Override
-    public boolean checkForStock(RecipeIngredient order) {
+    public boolean checkIngredientStock(RecipeIngredient order) {
 
-        Optional<IngredientEntity> o = ingredientRepo.findById(order.getIdIngredient());
-        IngredientEntity ingredient = o.get();
+        IngredientEntity ingredient = ingredientRepo.findById(order.getIdIngredient())
+                .orElseThrow(
+                        RuntimeException::new);
 
-        if (ingredient.getQuantityInStock() > order.getQuantity()) {
-            return true;
-        } else {
-            return false;
-        }
+        return ingredient.getQuantityInStock() > order.getQuantity();
+
     }
 
     @Override
     public void buyStock(Long idIngredient) {
 
-        Optional<IngredientEntity> object = ingredientRepo.findById(idIngredient);
+        IngredientEntity ingredient = ingredientRepo.findById(idIngredient)
+                .orElseThrow(
+                        RuntimeException::new);
 
-        if (object.isPresent()) {
-            IngredientEntity ingredient = object.get();
+        QuantitySold quantitySold = market.buyStock(ingredient.getName());
 
-            QuantitySold quantitySold = market.buyStock(ingredient.getName());
+        int actualStock = ingredient.getQuantityInStock();
+        int quantityBought = quantitySold.getQuantitySold();
+        int newStock = actualStock + quantityBought;
 
-            int actualStock = ingredient.getQuantityInStock();
-            int quantityBought = quantitySold.getQuantitySold();
+        ingredient.setQuantityInStock(newStock);
+        ingredientRepo.save(ingredient);
 
-            ingredient.setQuantityInStock(actualStock + quantityBought);
-
-            ingredientRepo.save(ingredient);
-        }
+        System.out.println("Amount bought for ingredient " + ingredient.getName() + ": " + quantityBought);
+        System.out.println("Now the warehouse has " + newStock + " of " + ingredient.getName() + " in stock.");
 
     }
 
@@ -58,12 +58,10 @@ public class StockServiceImpl implements StockService {
     public boolean checkRecipe(List<RecipeIngredient> ingredients) {
 
         for (RecipeIngredient ingredient : ingredients) {
-            while (!checkForStock(ingredient)) {
+            while (!checkIngredientStock(ingredient)) {
                 buyStock(ingredient.getIdIngredient());
             }
-
         }
-
         return true;
     }
 

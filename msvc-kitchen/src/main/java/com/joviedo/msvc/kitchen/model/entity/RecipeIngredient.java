@@ -12,11 +12,14 @@ public class RecipeIngredient implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "INGREDIENT_ID", unique = true)
+    @Column(name = "INGREDIENT_ID")
     private Long idIngredient;
 
+    @Column(name = "INGREDIENT_NAME")
+    private String ingredientName;
+
     @Column(name = "QUANTITY")
-    private int quantity;
+    private int quantityNeeded;
 
     //Getters and Setters
 
@@ -36,12 +39,20 @@ public class RecipeIngredient implements Serializable {
         this.idIngredient = idIngredient;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuantityNeeded() {
+        return quantityNeeded;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantityNeeded(int quantityNeeded) {
+        this.quantityNeeded = quantityNeeded;
+    }
+
+    public String getIngredientName() {
+        return ingredientName;
+    }
+
+    public void setIngredientName(String ingredientName) {
+        this.ingredientName = ingredientName;
     }
 
     @Override

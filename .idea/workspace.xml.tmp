@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4304efee-cde4-403b-97da-be0fb08c0ea9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/client/WarehouseClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/DishDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/RecipeBasicDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/RecipeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/RecipeIngredientDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/mapper/DishMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/mapper/RecipeIngredientMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/mapper/RecipeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/MsvcKitchenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/MsvcKitchenApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeIngredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/DishService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/RecipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/DishServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/RecipeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/RecipeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/controller/WarehouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/impl/StockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/impl/StockServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2NNfqcK89KC1B5PIPMRBNb4zkM6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.joviedo.msvc.kitchen.dto" />
+      <recent name="com.joviedo.msvc.kitchen.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MsvcWarehouseApplication">
+    <configuration name="MsvcKitchenApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.joviedo.msvc.kitchen.MsvcKitchenApplication" />
+      <module name="msvc-kitchen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joviedo.msvc.kitchen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsvcWarehouseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.joviedo.msvc.warehouse.MsvcWarehouseApplication" />
+      <module name="msvc-warehouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.joviedo.msvc.warehouse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MsvcKitchenApplication" />
+        <item itemvalue="Application.MsvcWarehouseApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4304efee-cde4-403b-97da-be0fb08c0ea9" name="Changes" comment="" />
+      <created>1679509657066</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679509657066</updated>
+    </task>
+    <servers />
+  </component>
+</project>
