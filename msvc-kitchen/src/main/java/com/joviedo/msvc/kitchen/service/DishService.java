@@ -11,8 +11,14 @@ import java.util.List;
 public interface DishService {
 
     DishEntity orderDish();
+
     PageDto<DishDto> listAll(Pageable page, HttpServletRequest request);
+
     List<DishDto> listPreparingDishes();
 
     void cookDish(DishEntity dish);
+
+    void addDishToQueue(DishEntity dish);
+
+    void moveNextDishFromWaitingQueueToPreparingQueue();
 }

@@ -4,7 +4,6 @@ import com.joviedo.msvc.warehouse.dto.BuyOrderDto;
 import com.joviedo.msvc.warehouse.dto.IngredientDto;
 import com.joviedo.msvc.warehouse.dto.PageDto;
 import com.joviedo.msvc.warehouse.model.RecipeIngredient;
-import com.joviedo.msvc.warehouse.model.entity.IngredientEntity;
 import com.joviedo.msvc.warehouse.service.StockService;
 import feign.FeignException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,10 +16,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/warehouse")
+@CrossOrigin
 public class WarehouseController {
 
     @Autowired

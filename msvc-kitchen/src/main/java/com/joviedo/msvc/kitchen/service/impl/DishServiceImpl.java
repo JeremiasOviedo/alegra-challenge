@@ -38,17 +38,21 @@ public class DishServiceImpl implements DishService {
     @Autowired
     UtilService util;
 
+
+    private Queue<DishEntity> preparingQueue = new LinkedList<>();
+    private Queue<DishEntity> waitingQueue = new LinkedList<>();
+    private final int maxPreparingCapacity = 10;
+
     @Override
     public DishEntity orderDish() {
 
         DishEntity dish = new DishEntity();
 
         dish.setRecipe(recipeService.getRandomRecipe());
-        dish.setStatus(DishStatus.PREPARING);
-        recipeService.checkRecipeIngredients(dish.getRecipe());
-        warehouseClient.discountStockFromRecipe(dish.getRecipe().getRecipeIngredients());
+        dish.setStatus(DishStatus.WAITING);
         dish = dishRepo.save(dish);
-        cookDish(dish);
+        addDishToQueue(dish);
+
 
         return dish;
     }
@@ -83,15 +87,43 @@ public class DishServiceImpl implements DishService {
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
         Runnable finishDish = () -> {
+
+            recipeService.checkRecipeIngredients(dish.getRecipe());
+            warehouseClient.discountStockFromRecipe(dish.getRecipe().getRecipeIngredients());
             dish.setStatus(DishStatus.FINISHED);
             dishRepo.save(dish);
             System.out.println("Dish " + dish.getIdDish() + " is ready.");
+            preparingQueue.remove(dish);
+            moveNextDishFromWaitingQueueToPreparingQueue();
         };
 
         executor.schedule(finishDish, timeToCook, TimeUnit.SECONDS);
         executor.shutdown();
     }
 
+    @Override
+    public synchronized void addDishToQueue(DishEntity dish) {
+        if (preparingQueue.size() < maxPreparingCapacity) {
+            preparingQueue.add(dish);
+            dish.setStatus(DishStatus.PREPARING);
+            dishRepo.save(dish);
+            cookDish(dish);
+        } else {
+            waitingQueue.add(dish);
+            dish.setStatus(DishStatus.WAITING);
+        }
+    }
+
+    @Override
+    public synchronized void moveNextDishFromWaitingQueueToPreparingQueue() {
+        if (!waitingQueue.isEmpty() && preparingQueue.size() < maxPreparingCapacity) {
+            DishEntity nextDish = waitingQueue.poll();
+            preparingQueue.add(nextDish);
+            nextDish.setStatus(DishStatus.PREPARING);
+            dishRepo.save(nextDish);
+            cookDish(nextDish);
+        }
+    }
 
 }
 
