@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/dish")
-public class DishController {
+@RequestMapping("/kitchen")
+public class KitchenController {
 
     @Autowired
     DishService dishService;
 
 
-    @GetMapping()
+    @GetMapping("/orderDish")
     public DishEntity test() {
 
         DishEntity dish = dishService.orderDish();

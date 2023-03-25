@@ -1,26 +1,14 @@
-package com.joviedo.msvc.warehouse.model.entity;
+package com.joviedo.msvc.warehouse.dto;
 
-import jakarta.persistence.*;
+public class IngredientDto {
 
-import java.io.Serializable;
-
-@Entity
-@Table(name="INGREDIENTS")
-public class IngredientEntity implements Serializable {
-
-    private static final Long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idIngredient;
 
-    @Column(name="NAME")
     private String name;
 
-    @Column(name="QUANTITY_IN_STOCK")
-    private int quantityInStock = 5;
+    private int quantityInStock;
 
-    //Getters and Setters
+    //Getters & Setters
 
 
     public Long getIdIngredient() {

@@ -1,5 +1,6 @@
 package com.joviedo.msvc.warehouse.controller;
 
+import com.joviedo.msvc.warehouse.dto.IngredientDto;
 import com.joviedo.msvc.warehouse.model.RecipeIngredient;
 import com.joviedo.msvc.warehouse.model.entity.IngredientEntity;
 import com.joviedo.msvc.warehouse.service.StockService;
@@ -21,7 +22,7 @@ public class WarehouseController {
     StockService stockService;
 
 
-    @GetMapping("/buyStock")
+    @PostMapping("/buyStock")
     public ResponseEntity<?> buyStock(@RequestParam Long ingredient) {
 
         try {
@@ -42,6 +43,14 @@ public class WarehouseController {
         stockService.checkRecipe(ingredients);
         return ResponseEntity.noContent().build();
 
+
+    }
+
+    @PostMapping("/discountStock")
+    public ResponseEntity<List<IngredientDto>> discountStockFromRecipe(@RequestBody List<RecipeIngredient> recipe) {
+
+        List<IngredientDto> ingredientsUpdated = stockService.discountIngredientStock(recipe);
+        return ResponseEntity.status(HttpStatus.OK).body(ingredientsUpdated);
 
     }
 }

@@ -5,22 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4304efee-cde4-403b-97da-be0fb08c0ea9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/client/WarehouseClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/DishDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/RecipeBasicDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/RecipeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/RecipeIngredientDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/mapper/DishMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/mapper/RecipeIngredientMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/mapper/RecipeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/MsvcKitchenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/MsvcKitchenApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/RecipeIngredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/IngredientDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/PageDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/UtilService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/UtilServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/dto/IngredientDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/mapper/IngredientMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/model/entity/BuyOrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/repository/BuyOrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/client/WarehouseClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/client/WarehouseClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/controller/KitchenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/DishDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/dto/DishDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/DishEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/model/entity/DishEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/repository/DishRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/repository/DishRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/DishService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/RecipeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/DishServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/RecipeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-kitchen/src/main/java/com/joviedo/msvc/kitchen/service/impl/RecipeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/controller/WarehouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/model/RecipeIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/model/RecipeIngredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/model/entity/IngredientEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/model/entity/IngredientEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/repository/IngredientRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/repository/IngredientRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/StockService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/impl/StockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/msvc-warehouse/src/main/java/com/joviedo/msvc/warehouse/service/impl/StockServiceImpl.java" afterDir="false" />
     </list>
@@ -39,6 +43,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -99,8 +106,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MsvcKitchenApplication" />
         <item itemvalue="Application.MsvcWarehouseApplication" />
+        <item itemvalue="Application.MsvcKitchenApplication" />
       </list>
     </recent_temporary>
   </component>

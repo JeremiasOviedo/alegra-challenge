@@ -1,5 +1,6 @@
 package com.joviedo.msvc.kitchen.client;
 
+import com.joviedo.msvc.kitchen.dto.IngredientDto;
 import com.joviedo.msvc.kitchen.model.entity.RecipeIngredient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -14,4 +15,7 @@ public interface WarehouseClient {
 
     @PostMapping("/check")
     ResponseEntity<?> checkRecipe(@RequestBody List<RecipeIngredient> ingredients);
+
+    @PostMapping("/discountStock")
+    ResponseEntity<List<IngredientDto>> discountStockFromRecipe(@RequestBody List<RecipeIngredient> recipe);
 }

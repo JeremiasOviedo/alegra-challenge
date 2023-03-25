@@ -4,7 +4,7 @@ public class RecipeIngredient {
 
     private Long idIngredient;
 
-    private int quantity;
+    private int quantityNeeded;
 
     //Getters and Setters
 
@@ -17,11 +17,11 @@ public class RecipeIngredient {
         this.idIngredient = idIngredient;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuantityNeeded() {
+        return quantityNeeded;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantityNeeded(int quantityNeeded) {
+        this.quantityNeeded = quantityNeeded;
     }
 }

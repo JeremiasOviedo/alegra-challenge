@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "DISHES")
@@ -25,7 +26,7 @@ public class DishEntity implements Serializable {
     private RecipeEntity recipe;
 
     @CreationTimestamp
-    private Date creationDate;
+    private LocalDateTime creationDate;
 
 
     //Getters and Setters
@@ -54,11 +55,11 @@ public class DishEntity implements Serializable {
         this.recipe = recipe;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 }

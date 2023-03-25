@@ -2,6 +2,7 @@ package com.joviedo.msvc.kitchen.dto;
 
 import com.joviedo.msvc.kitchen.enumerated.DishStatus;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class DishDto {
@@ -9,7 +10,7 @@ public class DishDto {
     private Long idDish;
     private DishStatus status;
     private RecipeBasicDto recipe;
-    private Date creationDate;
+    private LocalDateTime creationDate;
 
     //Getters & Setters
 
@@ -37,11 +38,11 @@ public class DishDto {
         this.recipe = recipe;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 }
