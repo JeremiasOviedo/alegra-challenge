@@ -13,5 +13,5 @@ import java.util.List;
 public interface DishRepo extends JpaRepository<DishEntity, Long> {
 
     List<DishEntity> findByStatus(DishStatus status);
-    Page<DishEntity> findAll(Pageable pageable);
+    Page<DishEntity> findAllByOrderByCreationDateDesc(Pageable pageable);
 }

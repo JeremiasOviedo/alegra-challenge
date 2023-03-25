@@ -28,6 +28,9 @@ public class BuyOrderEntity implements Serializable {
 
     //Getters & Setters
 
+    public BuyOrderEntity() {
+    }
+
     public BuyOrderEntity(String ingredient, int quantityBought){
         this.ingredient = ingredient;
         this.quantityBought = quantityBought;

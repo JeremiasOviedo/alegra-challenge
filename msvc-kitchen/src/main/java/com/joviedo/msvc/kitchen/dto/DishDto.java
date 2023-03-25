@@ -3,7 +3,6 @@ package com.joviedo.msvc.kitchen.dto;
 import com.joviedo.msvc.kitchen.enumerated.DishStatus;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class DishDto {
 

@@ -1,11 +1,16 @@
 package com.joviedo.msvc.warehouse.controller;
 
+import com.joviedo.msvc.warehouse.dto.BuyOrderDto;
 import com.joviedo.msvc.warehouse.dto.IngredientDto;
+import com.joviedo.msvc.warehouse.dto.PageDto;
 import com.joviedo.msvc.warehouse.model.RecipeIngredient;
 import com.joviedo.msvc.warehouse.model.entity.IngredientEntity;
 import com.joviedo.msvc.warehouse.service.StockService;
 import feign.FeignException;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -53,4 +58,21 @@ public class WarehouseController {
         return ResponseEntity.status(HttpStatus.OK).body(ingredientsUpdated);
 
     }
+
+    @GetMapping("/buyOrders")
+    public ResponseEntity<PageDto<BuyOrderDto>> getBuyOrders(@PageableDefault(size = 20) Pageable page,
+                                                            HttpServletRequest request) {
+
+        PageDto<BuyOrderDto> result = stockService.listBuyOrders(page, request);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+
+    }
+
+    @GetMapping("/ingredients")
+    public ResponseEntity<List<IngredientDto>> getIngredientsInStock(){
+
+        List<IngredientDto> ingredients = stockService.listIngredients();
+        return ResponseEntity.status(HttpStatus.OK).body(ingredients);
+    }
+
 }

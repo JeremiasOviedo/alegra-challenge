@@ -15,10 +15,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class DishServiceImpl implements DishService {
@@ -45,11 +45,12 @@ public class DishServiceImpl implements DishService {
 
         dish.setRecipe(recipeService.getRandomRecipe());
         dish.setStatus(DishStatus.PREPARING);
-
         recipeService.checkRecipeIngredients(dish.getRecipe());
         warehouseClient.discountStockFromRecipe(dish.getRecipe().getRecipeIngredients());
+        dish = dishRepo.save(dish);
+        cookDish(dish);
 
-        return dishRepo.save(dish);
+        return dish;
     }
 
     @Override
@@ -57,7 +58,7 @@ public class DishServiceImpl implements DishService {
         PageDto<DishDto> pageDto = new PageDto<>();
         Map<String, String> links = new HashMap<>();
         List<DishDto> listDto = new ArrayList<>();
-        Page<DishEntity> elements = dishRepo.findAll(page);
+        Page<DishEntity> elements = dishRepo.findAllByOrderByCreationDateDesc(page);
 
         elements.getContent().forEach(element -> listDto.add(dishMapper.dishEntity2Dto(element)));
         links.put("next", elements.hasNext() ? util.makePaginationLink(request, page.getPageNumber() + 1) : "");
@@ -74,4 +75,25 @@ public class DishServiceImpl implements DishService {
         return dishMapper.entityList2Dto(dishRepo.findByStatus(DishStatus.PREPARING));
     }
 
+    @Override
+    public void cookDish(DishEntity dish) {
+
+        int timeToCook = dish.getRecipe().getTimeToCook();
+
+        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+
+        Runnable finishDish = () -> {
+            dish.setStatus(DishStatus.FINISHED);
+            dishRepo.save(dish);
+            System.out.println("Dish " + dish.getIdDish() + " is ready.");
+        };
+
+        executor.schedule(finishDish, timeToCook, TimeUnit.SECONDS);
+        executor.shutdown();
+    }
+
+
 }
+
+
+

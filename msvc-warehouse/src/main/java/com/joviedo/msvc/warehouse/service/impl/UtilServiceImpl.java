@@ -1,6 +1,6 @@
-package com.joviedo.msvc.kitchen.service.impl;
+package com.joviedo.msvc.warehouse.service.impl;
 
-import com.joviedo.msvc.kitchen.service.UtilService;
+import com.joviedo.msvc.warehouse.service.UtilService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 

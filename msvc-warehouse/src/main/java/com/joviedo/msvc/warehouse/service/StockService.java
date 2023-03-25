@@ -1,11 +1,13 @@
 package com.joviedo.msvc.warehouse.service;
 
+import com.joviedo.msvc.warehouse.dto.BuyOrderDto;
 import com.joviedo.msvc.warehouse.dto.IngredientDto;
+import com.joviedo.msvc.warehouse.dto.PageDto;
 import com.joviedo.msvc.warehouse.model.RecipeIngredient;
-import com.joviedo.msvc.warehouse.model.entity.IngredientEntity;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface StockService {
 
@@ -19,7 +21,7 @@ public interface StockService {
 
     List<IngredientDto> discountIngredientStock(List<RecipeIngredient> recipe);
 
-
+    PageDto<BuyOrderDto> listBuyOrders(Pageable page, HttpServletRequest request);
 
 
 }

@@ -1,12 +1,8 @@
-package com.joviedo.msvc.kitchen.dto;
-
-
-
+package com.joviedo.msvc.warehouse.dto;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public class PageDto <T>{
     private List<T> content;
