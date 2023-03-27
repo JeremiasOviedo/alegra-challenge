@@ -20,6 +20,7 @@ public class RecipeMapper {
 
         dto.setIdRecipe(entity.getIdRecipe());
         dto.setName(entity.getName());
+        dto.setTimeToCook(entity.getTimeToCook());
         dto.setIngredients(ingredientMapper.entityList2Dto(entity.getRecipeIngredients()));
 
         return dto;

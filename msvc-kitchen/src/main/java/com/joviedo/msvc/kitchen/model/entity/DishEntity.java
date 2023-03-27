@@ -26,6 +26,7 @@ public class DishEntity implements Serializable {
     private RecipeEntity recipe;
 
     @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDate;
 
 

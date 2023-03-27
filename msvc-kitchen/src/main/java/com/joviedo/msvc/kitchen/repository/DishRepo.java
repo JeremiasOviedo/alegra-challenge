@@ -14,4 +14,6 @@ public interface DishRepo extends JpaRepository<DishEntity, Long> {
 
     List<DishEntity> findByStatus(DishStatus status);
     Page<DishEntity> findAllByOrderByCreationDateDesc(Pageable pageable);
+    Page<DishEntity> findAllByStatusOrderByCreationDateDesc(Pageable pageable, DishStatus status);
+    Page<DishEntity> findAllByStatusOrderByCreationDateAsc(Pageable pageable, DishStatus status);
 }

@@ -14,6 +14,8 @@ public interface DishService {
 
     PageDto<DishDto> listAll(Pageable page, HttpServletRequest request);
 
+    PageDto<DishDto> listByFilter (Pageable page, HttpServletRequest request, String status);
+
     List<DishDto> listPreparingDishes();
 
     void cookDish(DishEntity dish);

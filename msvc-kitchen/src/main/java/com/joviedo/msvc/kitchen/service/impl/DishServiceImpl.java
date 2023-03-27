@@ -75,6 +75,42 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
+    public PageDto<DishDto> listByFilter(Pageable page, HttpServletRequest request, String status) {
+        PageDto<DishDto> pageDto = new PageDto<>();
+        Map<String, String> links = new HashMap<>();
+        List<DishDto> listDto = new ArrayList<>();
+        Page<DishEntity> elements;
+
+        switch (status) {
+            case "preparing": {
+                elements = dishRepo.findAllByStatusOrderByCreationDateDesc(page, DishStatus.PREPARING);
+                break;
+            }
+            case "waiting": {
+                elements = dishRepo.findAllByStatusOrderByCreationDateAsc(page, DishStatus.WAITING);
+                break;
+            }
+            case "finished": {
+                elements = dishRepo.findAllByStatusOrderByCreationDateDesc(page, DishStatus.FINISHED);
+                break;
+            }
+            default: {
+                throw new RuntimeException("Invalid filter option " + status);
+            }
+        }
+
+
+        elements.getContent().forEach(element -> listDto.add(dishMapper.dishEntity2Dto(element)));
+        links.put("next", elements.hasNext() ? util.makePaginationLink(request, page.getPageNumber() + 1) : "");
+        links.put("previous", elements.hasPrevious() ? util.makePaginationLink(request, page.getPageNumber() - 1) : "");
+
+        pageDto.setContent(listDto);
+        pageDto.setLinks(links);
+
+        return pageDto;
+    }
+
+    @Override
     public List<DishDto> listPreparingDishes() {
         return dishMapper.entityList2Dto(dishRepo.findByStatus(DishStatus.PREPARING));
     }

@@ -1,0 +1,11 @@
+DELETE FROM msvc_warehouse.ingredients;
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (1,'tomato',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (2,'lemon',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (3,'potato',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (4,'rice',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (5,'ketchup',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (6,'lettuce',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (7,'onion',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (8,'cheese',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (9,'meat',5);
+INSERT INTO msvc_warehouse.ingredients(id_ingredient,name,quantity_in_stock) VALUES (10,'chicken',5);

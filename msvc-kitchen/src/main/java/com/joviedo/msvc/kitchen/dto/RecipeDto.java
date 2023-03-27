@@ -10,6 +10,7 @@ public class RecipeDto {
 
     private Long idRecipe;
     private String name;
+    private int timeToCook;
     private List<RecipeIngredientDto> ingredients;
 
     // Getters & Setters
@@ -37,5 +38,13 @@ public class RecipeDto {
 
     public void setIngredients(List<RecipeIngredientDto> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public int getTimeToCook() {
+        return timeToCook;
+    }
+
+    public void setTimeToCook(int timeToCook) {
+        this.timeToCook = timeToCook;
     }
 }

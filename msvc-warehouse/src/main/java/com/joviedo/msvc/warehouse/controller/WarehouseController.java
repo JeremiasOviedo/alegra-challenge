@@ -67,7 +67,7 @@ public class WarehouseController {
 
     }
 
-    @GetMapping("/ingredients")
+    @GetMapping("/stock")
     public ResponseEntity<List<IngredientDto>> getIngredientsInStock(){
 
         List<IngredientDto> ingredients = stockService.listIngredients();

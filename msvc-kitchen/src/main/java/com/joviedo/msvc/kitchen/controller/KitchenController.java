@@ -12,10 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,7 +27,7 @@ public class KitchenController {
     private RecipeService recipeService;
 
 
-    @GetMapping("/orderDish")
+    @PostMapping("/orderDish")
     public DishEntity test() {
 
         DishEntity dish = dishService.orderDish();
@@ -40,11 +37,11 @@ public class KitchenController {
     }
 
     @GetMapping("/dishOrders")
-    public ResponseEntity<PageDto<DishDto>> getDishOrders(@PageableDefault(size = 20) Pageable page,
-                                                         HttpServletRequest request) {
+    public ResponseEntity<PageDto<DishDto>> getDishOrders(@PageableDefault(size = 10) Pageable page,
+                                                         HttpServletRequest request, @RequestParam String status) {
 
-        PageDto<DishDto> result = dishService.listAll(page, request);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
+        PageDto<DishDto> dishes = dishService.listByFilter(page, request,status);
+        return ResponseEntity.status(HttpStatus.OK).body(dishes);
 
     }
 
