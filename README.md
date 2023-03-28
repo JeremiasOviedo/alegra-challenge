@@ -26,6 +26,15 @@ Dirigete al directorio del proyecto
 ```bash
   cd alegra-challenge
 ```
+Configura la conexion a base de datos de los microservicios kitchen y warehouse en sus respectivos application.properties
+ msvc-kitchen:
+```bash
+spring.datasource.url=jdbc:mysql://mysql8:3306/msvc_kitchen?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+```
+msvc-warehouse:
+```bash
+spring.datasource.url=jdbc:mysql://mysql8:3306/msvc_warehouse?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+```
 Ejecuta docker-compose
 ```bash
   docker-compose up
