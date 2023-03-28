@@ -70,7 +70,7 @@
 <script>
 import axios from 'axios'
 
-const RECIPES_URL = 'http://164.90.185.14:8001/recipes'
+const RECIPES_URL = 'http://localhost:8001/recipes'
 
 export default {
   name: 'RecipeList',

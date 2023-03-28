@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     async getData() {
-      const endpoint = `http://164.90.185.14:8000/buyOrders`
+      const endpoint = `http://localhost:8000/buyOrders`
       axios
         .get(endpoint)
         .then((response) => {
@@ -71,7 +71,7 @@ export default {
     },
 
     changePage(string) {
-      const endpoint = 'http://164.90.185.14:8000' + string
+      const endpoint = 'http://localhost:8000' + string
       axios
         .get(endpoint)
         .then((response) => {
