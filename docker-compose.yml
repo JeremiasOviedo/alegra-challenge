@@ -1,0 +1,65 @@
+version: "3.9"
+services:
+  mysql8:
+    container_name: mysql8
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - data-mysql:/var/lib/mysql
+    restart: always
+    networks:
+      - web
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  msvc-kitchen:
+    container_name: msvc-kitchen
+    build:
+      context: ./
+      dockerfile: ./msvc-kitchen/Dockerfile
+    ports:
+      - "8001:8001"
+    networks:
+      - web
+    depends_on:
+      mysql8:
+        condition: service_healthy
+    restart: always
+
+  msvc-warehouse:
+    container_name: msvc-warehouse
+    build:
+      context: ./
+      dockerfile: ./msvc-warehouse/Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - web
+    depends_on:
+      mysql8:
+        condition: service_healthy
+    restart: always
+
+  msvc-frontend:
+    container_name: msvc-frontend
+    build:
+      context: ./
+      dockerfile: ./msvc-frontend/Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - web
+    depends_on:
+      - mysql8
+    restart: always
+
+volumes:
+  data-mysql:
+networks:
+  web:

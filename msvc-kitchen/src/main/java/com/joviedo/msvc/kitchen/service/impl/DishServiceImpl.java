@@ -146,7 +146,6 @@ public class DishServiceImpl implements DishService {
             cookDish(dish);
         } else {
             waitingQueue.add(dish);
-            dish.setStatus(DishStatus.WAITING);
         }
     }
 
