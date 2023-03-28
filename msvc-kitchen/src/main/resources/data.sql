@@ -1,3 +1,4 @@
+
 DELETE FROM msvc_kitchen.recipes;
 INSERT INTO msvc_kitchen.recipes(id_recipe,name,time_to_cook) VALUES (1,'Ensalada de tomate y queso',20);
 INSERT INTO msvc_kitchen.recipes(id_recipe,name,time_to_cook) VALUES (2,'Milanesa de carne con puré',50);
@@ -29,4 +30,5 @@ INSERT INTO msvc_kitchen.recipe_ingredients(id,ingredient_id,quantity,recipe_id,
 INSERT INTO msvc_kitchen.recipe_ingredients(id,ingredient_id,quantity,recipe_id,ingredient_name) VALUES (20,10,2,6,'chicken');
 INSERT INTO msvc_kitchen.recipe_ingredients(id,ingredient_id,quantity,recipe_id,ingredient_name) VALUES (21,2,2,6,'lemon');
 INSERT INTO msvc_kitchen.recipe_ingredients(id,ingredient_id,quantity,recipe_id,ingredient_name) VALUES (22,7,2,6,'onion');
+
 

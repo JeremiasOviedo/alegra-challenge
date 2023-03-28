@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "msvc-warehouse", url = "http://localhost:8000/warehouse")
+@FeignClient(name = "msvc-warehouse", url = "msvc-warehouse:8000")
 public interface WarehouseClient {
 
     @PostMapping("/check")
