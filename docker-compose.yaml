@@ -20,9 +20,10 @@ services:
 
   msvc-kitchen:
     container_name: msvc-kitchen
-    build:
-      context: ./
-      dockerfile: ./msvc-kitchen/Dockerfile
+    image: cheroqui/alegra-challenge-kitchen:latest
+#    build:
+#      context: ./
+#      dockerfile: ./msvc-kitchen/Dockerfile
     ports:
       - "8001:8001"
     networks:
@@ -34,9 +35,10 @@ services:
 
   msvc-warehouse:
     container_name: msvc-warehouse
-    build:
-      context: ./
-      dockerfile: ./msvc-warehouse/Dockerfile
+    image: cheroqui/alegra-challenge-warehouse:latest
+#    build:
+#      context: ./
+#      dockerfile: ./msvc-warehouse/Dockerfile
     ports:
       - "8000:8000"
     networks:
@@ -48,9 +50,10 @@ services:
 
   msvc-frontend:
     container_name: msvc-frontend
-    build:
-      context: ./
-      dockerfile: ./msvc-frontend/Dockerfile
+    image: cheroqui/alegra-challenge-frontend:latest
+#    build:
+#      context: ./
+#      dockerfile: ./msvc-frontend/Dockerfile
     ports:
       - "8080:8080"
     networks:

@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     async obtenerDatos() {
-      const endpoint = `http://localhost:8001/dishOrders?status=${this.filter}`
+      const endpoint = `http://164.90.185.14:8001/dishOrders?status=${this.filter}`
       axios
         .get(endpoint)
         .then((response) => {
@@ -72,7 +72,7 @@ export default {
     },
 
     changePage(string) {
-      const endpoint = 'http://localhost:8001' + string + `&status=${this.filter}`
+      const endpoint = 'http://164.90.185.14:8001' + string + `&status=${this.filter}`
       axios
         .get(endpoint)
         .then((response) => {

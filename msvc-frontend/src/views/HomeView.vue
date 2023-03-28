@@ -10,7 +10,7 @@ export default {
 methods: {
     async orderDish() {
       try {
-        const response = await axios.post("http://localhost:8001/orderDish");
+        const response = await axios.post("http://164.90.185.14:8001/orderDish");
         console.log(response.data);
       } catch (error) {
         console.error(error);

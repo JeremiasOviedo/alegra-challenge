@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     async getData() {
-      const endpoint = `http://localhost:8000/stock`
+      const endpoint = `http://164.90.185.14:8000/stock`
       axios
         .get(endpoint)
         .then((response) => {
