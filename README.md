@@ -27,7 +27,8 @@ Dirigete al directorio del proyecto
   cd alegra-challenge
 ```
 Configura la conexion a base de datos de los microservicios kitchen y warehouse en sus respectivos application.properties
- msvc-kitchen:
+
+msvc-kitchen:
 ```bash
 spring.datasource.url=jdbc:mysql://mysql8:3306/msvc_kitchen?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
 ```
