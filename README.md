@@ -1,6 +1,6 @@
 # Alegra Technical Challenge
 
-Este es un challenge tecnico que hice como parte de mi entrevista a Alegra.
+Este es un challenge tecnico que hice como parte de mi proceso de seleccion en Alegra.
 
 ## Tech Stack
 
