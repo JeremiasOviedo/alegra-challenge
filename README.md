@@ -40,7 +40,7 @@ Ejecuta docker-compose
 ```
 El servidor deberia iniciarse por defecto en la ip
 ```bash
-  http://127.0.0.1:8080/
+  http://localhost:8080/
 ```
 
 
