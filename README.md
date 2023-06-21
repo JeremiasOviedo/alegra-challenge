@@ -6,12 +6,6 @@
 
 **Cliente**: HTML, CSS, VueJS.
 
-## Link al deploy
-
-Aqui pueden encontrar la aplicacion deployada en un servidor Linux, usando el servicio de Droplets de DigitalOcean
-
-
-[Link](http://164.90.185.14:8080/)
 
 
 ## Correrlo en local
