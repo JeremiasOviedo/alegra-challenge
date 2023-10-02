@@ -23,10 +23,24 @@ Configura la conexion a base de datos de los microservicios kitchen y warehouse 
 msvc-kitchen:
 ```bash
 spring.datasource.url=jdbc:mysql://mysql8:3306/msvc_kitchen?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+
+spring.datasource.username= *your user*
+spring.datasource.password= *your password*
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.defer-datasource-initialization=true
+spring.sql.init.mode=always
 ```
 msvc-warehouse:
 ```bash
 spring.datasource.url=jdbc:mysql://mysql8:3306/msvc_warehouse?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+
+spring.datasource.username= *your user*
+spring.datasource.password= *your password*
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.defer-datasource-initialization=true
+spring.sql.init.mode=always
 ```
 Ejecuta docker-compose
 ```bash
